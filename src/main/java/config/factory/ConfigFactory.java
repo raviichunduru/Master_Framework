@@ -1,5 +1,6 @@
-package config;
+package config.factory;
 
+import config.FrameworkConfig;
 import org.aeonbits.owner.ConfigCache;
 
 public final class ConfigFactory {
