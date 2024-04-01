@@ -4,7 +4,7 @@ import enums.Browser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import static config.factory.ConfigFactory.getConfig;
+import static config.factory.FrameworkConfigFactory.getConfig;
 
 public final class SeleniumGridFireFoxManager {
 

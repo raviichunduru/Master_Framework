@@ -1,12 +1,16 @@
 package config;
 
 import config.converters.StringToBrowserEnum;
-import config.converters.StringToBrowserTypeEnum;
-import config.converters.StringToRemoteTypeEnum;
+import config.converters.StringToMobilePlatformTypeEnum;
+import config.converters.StringToMobileRemoteTypeEnum;
+import config.converters.StringToRunModeEnum;
+import config.converters.StringToBrowserRemoteTypeEnum;
 import config.converters.StringToURL;
-import enums.RemoteType;
+import enums.BrowserRemoteType;
 import enums.Browser;
-import enums.BrowserType;
+import enums.MobilePlatformType;
+import enums.MobileRemoteType;
+import enums.RunMode;
 import org.aeonbits.owner.Config;
 
 import java.net.URL;
@@ -16,8 +20,15 @@ import java.net.URL;
   "system:properties",
   "system:env",
   "file:${user.dir}/src/test/resources/config.properties",
+  "file:${user.dir}/src/test/resources/staging-config.properties"
 })
 public interface FrameworkConfig extends Config {
+
+  @DefaultValue("staging")
+  String environment();
+
+  @Key("${environment}.webURL")
+  String webURL();
 
   String URL();
   
@@ -25,15 +36,24 @@ public interface FrameworkConfig extends Config {
   @ConverterClass(StringToBrowserEnum.class)
   Browser browser();
 
-  @ConverterClass(StringToBrowserTypeEnum.class)
-  BrowserType browserType();
+  @ConverterClass(StringToRunModeEnum.class)
+  RunMode runMode();
 
-  @ConverterClass(StringToRemoteTypeEnum.class)
-  RemoteType remoteType();
+  @ConverterClass(StringToBrowserRemoteTypeEnum.class)
+  BrowserRemoteType browserRemoteType();
 
   @ConverterClass(StringToURL.class)
   URL seleniumGridURL();
 
   @ConverterClass(StringToURL.class)
   URL selenoidURL();
+
+  @ConverterClass(StringToURL.class)
+  URL localAppiumServer();
+
+  @ConverterClass(StringToMobileRemoteTypeEnum.class)
+  MobileRemoteType mobileRemoteType();
+
+  @ConverterClass(StringToMobilePlatformTypeEnum.class)
+  MobilePlatformType mobilePlatformType();
 }

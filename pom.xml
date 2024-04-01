@@ -13,7 +13,7 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <owner.version>1.0.12</owner.version>
-        <appium.java.version>8.3.0</appium.java.version>
+        <appium.java.version>9.1.0</appium.java.version>
         <extentreport.version>5.0.8</extentreport.version>
         <restassured.version>5.2.0</restassured.version>
         <jackson.version>2.13.1</jackson.version>
@@ -26,17 +26,23 @@
         <noexception.version>1.7.1</noexception.version>
         <fixture.factory.version>3.1.0</fixture.factory.version>
         <reflection.version>0.10.2</reflection.version>
-        <!--<junit.jupiter.version>5.8.2</junit.jupiter.version>-->
+        <junit.jupiter.version>5.10.2</junit.jupiter.version>
         <testng.version>7.9.0</testng.version>
+        <test-data-supplier.version>2.3.0</test-data-supplier.version>
+        <podam.version>8.0.1.RELEASE</podam.version>
+        <jackson-databind>2.16.1</jackson-databind>
+
+
+
     </properties>
 
     <dependencies>
 
-       <!-- <dependency>
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>${junit.jupiter.version}</version>
-        </dependency>-->
+        </dependency>
 
         <dependency>
             <groupId>org.reflections</groupId>
@@ -136,6 +142,27 @@
             <version>${testng.version}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/io.github.sskorol/test-data-supplier -->
+        <dependency>
+            <groupId>io.github.sskorol</groupId>
+            <artifactId>test-data-supplier</artifactId>
+            <version>${test-data-supplier.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/uk.co.jemos.podam/podam -->
+        <dependency>
+            <groupId>uk.co.jemos.podam</groupId>
+            <artifactId>podam</artifactId>
+            <version>${podam.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-databind}</version>
+        </dependency>
+
 
     </dependencies>
 
@@ -147,6 +174,15 @@
                 <version>3.0.0-M5</version>
                 <configuration>
                     <reuseForks>false</reuseForks>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>21</source>
+                    <target>21</target>
+                    <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
             </plugin>
 

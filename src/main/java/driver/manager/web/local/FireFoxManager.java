@@ -9,7 +9,7 @@ public final class FireFoxManager {
 
   public static FirefoxDriver getDriver()
   {
-    WebDriverManager.firefoxdriver().setup();
+    //WebDriverManager.firefoxdriver().setup();
     return new FirefoxDriver();
   }
 }

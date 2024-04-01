@@ -9,7 +9,7 @@ public final class ChromeManager {
 
   public static ChromeDriver getDriver()
   {
-    WebDriverManager.chromedriver().setup();
+    //WebDriverManager.chromedriver().setup();
     return new ChromeDriver();
   }
 }
