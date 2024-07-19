@@ -36,6 +36,5 @@ Technologies used in the project:
 *   Maven -- Build and Dependency Management Tool
 *   AssertJ -- Fluent Assertions
 *   Jackson -- Serialization and De-Serialization
-*   Awaitality -- Async API Calls
 *   NoException -- Custom Exception Handle to handle checked and unchecked exceptions
 *   Data Supplier -- Customized Data Provider
